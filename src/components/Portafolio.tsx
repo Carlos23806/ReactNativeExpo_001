@@ -13,11 +13,11 @@ const Portfolio = () => {
       
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Datos de Usuario</Text>
-        <Text style={styles.infoText}>Nombre: Jonathan Espitia</Text>
-        <Text style={styles.infoText}>Edad: 34</Text>
-        <Text style={styles.infoText}>Teléfono: 3025268469</Text>
-        <Text style={styles.infoText}>Email: jdespitia@sena.edu.co</Text>
-        <Text style={styles.infoText}>Dirección: Calle 13a #14-04</Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Nombre:</Text> <Text style={styles.InfosText}>Jonathan Espitia</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Edad:</Text> <Text style={styles.InfosText}> 34</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Teléfono:</Text> <Text style={styles.InfosText}> 3025268469</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Email:</Text> <Text style={styles.InfosText}> jdespitia@sena.edu.co</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Dirección:</Text> <Text style={styles.InfosText}> Calle 13a #14-04</Text></Text>
       </View>
       
       <View style={styles.section}>
@@ -26,7 +26,7 @@ const Portfolio = () => {
       </View>
       
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Habilidades</Text>
+        <Text style={styles.sectionTitle}>Skills</Text>
         <View style={styles.skillsContainer}>
           {[
             { name: 'Html', years: 12 },
@@ -83,21 +83,28 @@ const styles = StyleSheet.create({
     width: '100%',
     textAlign: 'center',
   },
-  infoText: {
+  containerText:{
     display: "flex",
-    gap: 50,
+    justifyContent: "space-between"
+  },
+  infoText: {
     fontSize: 14,
-    marginBottom: 5,
     color: "#000000",
     width: "100%",
   },
+  InfosText:{
+    width:"100%",
+  },
   skillsContainer: {
     flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
   },
   skillItem: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 5,
+    width: "200%",
   },
   skillText: {
     fontSize: 14,
