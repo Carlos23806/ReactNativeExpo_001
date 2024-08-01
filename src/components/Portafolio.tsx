@@ -13,10 +13,10 @@ const Portfolio = () => {
       
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Datos de Usuario</Text>
-        <Text style={styles.containerText}><Text style={styles.infoText}>Nombre:</Text> <Text style={styles.InfosText}>Jonathan Espitia</Text></Text>
-        <Text style={styles.containerText}><Text style={styles.infoText}>Edad:</Text> <Text style={styles.InfosText}> 34</Text></Text>
-        <Text style={styles.containerText}><Text style={styles.infoText}>Teléfono:</Text> <Text style={styles.InfosText}> 3025268469</Text></Text>
-        <Text style={styles.containerText}><Text style={styles.infoText}>Email:</Text> <Text style={styles.InfosText}> jdespitia@sena.edu.co</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Nombre:</Text> <Text style={styles.InfosText}>Carlos Martinez</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Edad:</Text> <Text style={styles.InfosText}> 17</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Teléfono:</Text> <Text style={styles.InfosText}> 3247022893</Text></Text>
+        <Text style={styles.containerText}><Text style={styles.infoText}>Email:</Text> <Text style={styles.InfosText}> camartinez@soy.sena.edu.co</Text></Text>
         <Text style={styles.containerText}><Text style={styles.infoText}>Dirección:</Text> <Text style={styles.InfosText}> Calle 13a #14-04</Text></Text>
       </View>
       
@@ -35,8 +35,8 @@ const Portfolio = () => {
             { name: 'Php', years: 12 },
             { name: 'Ionic', years: 6 },
             { name: 'Mysql', years: 10 },
-          ].map((skill, index) => (
-            <View key={index} style={styles.skillItem}>
+          ].map((skill) => (
+            <View style={styles.skillItem}>
               <Text style={styles.skillText}>{skill.name}</Text>
               <Text style={styles.skillText}>{skill.years}</Text>
             </View>
@@ -47,7 +47,7 @@ const Portfolio = () => {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Otros</Text>
         <Text style={styles.infoText}>Sigue mi Portafolio para mas información</Text>
-        <Text style={styles.infoText}>Jonathan.protafolioweb</Text>
+        <Text style={styles.infoText}>Carlos.protafolioweb</Text>
       </View>
     </ScrollView>
   );
@@ -85,15 +85,18 @@ const styles = StyleSheet.create({
   },
   containerText:{
     display: "flex",
+    width: "100%",
     justifyContent: "space-between"
   },
   infoText: {
     fontSize: 14,
     color: "#000000",
     width: "100%",
+    textAlign: "center",
   },
   InfosText:{
     width:"100%",
+    textAlign: "center",
   },
   skillsContainer: {
     flexDirection: "column",
