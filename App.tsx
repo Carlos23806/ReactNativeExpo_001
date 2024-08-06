@@ -10,11 +10,12 @@ const Stack = createStackNavigator();
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <ImageBackground source={require('./assets/img/Fondo.gif')} resizeMode="cover" style={styles.imageBackground}>
+    <ImageBackground source={require('./assets/img/Fondo.gif')}  style={styles.imageBackground}>
       <View style={styles.container}>
         <Image
           source={require('./assets/img/images.png')}
           style={styles.image}
+          resizeMode="cover"
         />
         <Text style={styles.title}>Hola Bienvenidos</Text>
         <Text style={styles.InfosText}>
@@ -58,12 +59,13 @@ const styles = StyleSheet.create({
     width: '80%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF99',
+    backgroundColor: '#FFFFFF50',
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 95,
+    height: 95,
     borderRadius: 50,
+    backgroundColor: '#FFFFFF80', 
   },
   title: {
     fontSize: 34,
@@ -88,20 +90,23 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: '#FC7200',
+    color: '#00698F',
     borderBottomWidth: 1,
-    borderBottomColor: '#FC7200',
-    textShadowColor: '#FC7200',
+    borderBottomColor: '#00698F',
+    textShadowColor: '#00415D',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1,
+    marginTop: 20,
   },
   signInButton: {
     marginTop: 20,
   },
   signInText: {
     fontSize: 16,
-    color: '#FFFFFF',
-    textShadowColor: '#000000',
+    color: '#00698F',
+    textShadowColor: '#00415D',
+    borderBottomWidth: 1,
+    borderBottomColor: '#00698F',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1,
   },
