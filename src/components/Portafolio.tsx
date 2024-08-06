@@ -10,7 +10,6 @@ const Portfolio = () => {
           style={styles.logo}
         />
       </View>
-      
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Datos de Usuario</Text>
         <Text style={styles.containerText}><Text style={styles.infoText}>Nombre:</Text> <Text style={styles.InfosText}>Carlos Martinez</Text></Text>

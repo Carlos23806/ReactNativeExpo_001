@@ -1,35 +1,46 @@
 import React from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+const SignUp: React.FC = () => {
+  const navigation = useNavigation();
 
-const SingUp: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.gridArea}>
         <View style={styles.formLogin}>
           <Text style={styles.infoTitle}>Registrate</Text>
           <TextInput
-            id="Text"
             style={styles.input}
             placeholder="Nombre"
           />
           <TextInput
-            id="email"
             style={styles.input}
             placeholder="Correo Electrónico"
+            keyboardType="email-address"
           />
           <TextInput
-            id="password"
             style={styles.input}
             placeholder="Contraseña"
+            secureTextEntry
           />
           <TextInput
-            id="password"
             style={styles.input}
             placeholder="Confirmar Contraseña"
+            secureTextEntry
           />
-          <TouchableOpacity style={styles.button}>Registrate</TouchableOpacity>
-          <TouchableOpacity style={styles.redirect}>¿Ya tienes cuenta?</TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.button}
+            onPress={() => navigation.navigate('Portfolio')}
+          >
+            <Text style={styles.buttonText}>Registrate</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.redirect}
+            onPress={() => navigation.navigate('SignIn')}
+          >
+            <Text style={styles.redirectText}>¿Ya tienes cuenta?</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
@@ -58,11 +69,11 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   redirect: {
+    marginTop: 10,
+  },
+  redirectText: {
     fontSize: 16,
     color: '#1e90ff',
-  },
-  linkForms: {
-    textDecorationLine: 'underline',
   },
   formLogin: {
     flex: 1,
@@ -83,11 +94,14 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#1e90ff',
-    color: '#fff',
     padding: 10,
     borderRadius: 5,
     margin: 10,
   },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
 });
 
-export default SingUp;
+export default SignUp;

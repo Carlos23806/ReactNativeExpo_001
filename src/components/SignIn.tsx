@@ -1,30 +1,37 @@
 import React from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+const SignIn: React.FC = () => {
+  const navigation = useNavigation();
 
-const SingIn: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.gridArea}>
         <View style={styles.formLogin}>
           <Text style={styles.infoTitle}>Inicio de Sesión</Text>
           <TextInput
-            id="email"
             style={styles.input}
             placeholder="Correo Electrónico"
+            keyboardType="email-address"
           />
           <TextInput
-            id="password"
             style={styles.input}
             placeholder="Contraseña"
+            secureTextEntry
           />
-          <TextInput
-            id="password"
-            style={styles.input}
-            placeholder="Confirmar Contraseña"
-          />
-          <TouchableOpacity style={styles.button}>Iniciar Sesión</TouchableOpacity>
-          <TouchableOpacity style={styles.redirect}>¿No tienes cuenta?</TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.button}
+            onPress={() => navigation.navigate('Portfolio')}
+          >
+            <Text style={styles.buttonText}>Iniciar Sesión</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.redirect}
+            onPress={() => navigation.navigate('SignUp')}
+          >
+            <Text style={styles.redirectText}>¿No tienes cuenta?</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
@@ -53,11 +60,11 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   redirect: {
+    marginTop: 10,
+  },
+  redirectText: {
     fontSize: 16,
     color: '#1e90ff',
-  },
-  linkForms: {
-    textDecorationLine: 'underline',
   },
   formLogin: {
     flex: 1,
@@ -78,11 +85,14 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#1e90ff',
-    color: '#fff',
     padding: 10,
     borderRadius: 5,
     margin: 10,
   },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
 });
 
-export default SingIn;
+export default SignIn;
